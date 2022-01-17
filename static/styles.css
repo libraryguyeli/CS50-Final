@@ -1,0 +1,84 @@
+header, nav, aside, article {
+    display: block;
+}
+
+header {
+    width: 100%;
+    height: 20%;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Crimson Text', serif;
+}
+
+h1 {
+    background-image: url("header.png");
+    color: #08224a;
+    height: 140px;
+    width: 100%;
+    padding-left: 50%;
+    padding-top: 55px;
+    font-size: 42px;
+}
+
+h2 {
+    padding-bottom: 15px;
+}
+
+.navbar-nav > li{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+main {
+    padding: 30px;
+    padding-top: 25px;
+}
+
+.navbar {
+    width: 100%;
+    height: 15%;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+fieldset {
+    overflow: hidden;
+}
+
+.response {
+    color: grey;
+    font-size: 15px;
+}
+
+label {
+    clear: none;
+    display: inline-block;
+    padding: 0 px 1 em 0 px 8 px;
+}
+
+input[type = radio], input.radio {
+    clear: none;
+    margin: 2 px 0 0 2 px;
+}
+
+#under {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#calc-form {
+    display: block;
+}
+
+tbody>tr>:nth-child(1) {
+    text-align: left;
+}

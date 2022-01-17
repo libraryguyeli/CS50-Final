@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Interactive Checklist
+{% endblock %}
+
+{% block main %}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector("#previous_passport").addEventListener("click", function() {
+                document.querySelector("#a1").innerHTML =
+                `If you had a 10-year passport and it expired within the past 5 years,
+                you must apply for renewal by mail. For more information: <a href="https://travel.state.gov/content/travel/en/passports/have-passport/renew.html"
+                target="_blank" rel="noopener noreferrer">Renew my U.S. passport</a>. If you had a 5-year passport or
+                your passport expired over 5 years ago, you must apply at an acceptance
+                facility. If either of those conditions is true, change your answer
+                to no and continue to the checklist.`;
+            })
+        })
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector("#first_passport").addEventListener("click", function() {
+                document.querySelector("#a1").innerHTML =
+                `<button type="submit" class="btn btn-dark"
+                style="margin-top:15px">Continue</button>`;
+            })
+        })
+    </script>
+
+    <h2>Interactive Checklist</h2>
+
+    <p>Before you can be seen for passport processing, you must have all the correct documents and payment.</p>
+
+    <form action="/requirements" method="post">
+        <fieldset>
+            <div class="q1">
+                <p id="under">Have you ever had a U.S. passport before?</p>
+                <input type="radio" value="Yes" id="previous_passport" name="q1">
+                <label for="previous_passport">Yes</label>
+                <input type="radio" value="No" id="first_passport" name="q1">
+                <label for="first_passport">No</label>
+                <p id="a1" class="response"></p>
+            </div>
+        </fieldset>
+    </form>
+
+
+{% endblock %}

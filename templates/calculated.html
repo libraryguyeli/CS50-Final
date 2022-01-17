@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Cost Calculator
+{% endblock %}
+
+{% block main %}
+
+    <h2>Cost Calculator</h2>
+
+    <p>For {{ total_applicants }} applicants, the payment to the U.S. Department of State
+    will be {{ total_cost }}. The payment to the acceptance facility will be
+    {{ processing_cost }}.</p>
+
+    <p style="border-top: solid black 1px; padding-top: 20px; font-weight: bold;">Your choices were:</p>
+
+    <table>
+        <tr>
+            <td>Total applicants:</td>
+            <td>{{ total_applicants }}</td>
+        </tr>
+        <tr>
+            <td>Adult (16+) passport books:</td>
+            <td>{{ adult_books }}</td>
+        </tr>
+        <tr>
+            <td>Adult (16+) passport cards:</td>
+            <td>{{ adult_cards }}</td>
+        </tr>
+        <tr>
+            <td>Minor passport books:</td>
+            <td>{{ minor_books }}</td>
+        </tr>
+        <tr>
+            <td>Minor passport cards:</td>
+            <td>{{ minor_cards }}</td>
+        </tr>
+        <tr>
+            <td>Expedited applications:</td>
+            <td>{{ expedite }}</td>
+        </tr>
+        <tr>
+            <td>1-2 delivery applications:</td>
+            <td>{{ overnight }}</td>
+        </tr>
+    </table>
+
+    <br><p style="padding-top: 20px;">To correct any errors, revisit the Cost Calculator page to restart.</p>
+
+{% endblock %}

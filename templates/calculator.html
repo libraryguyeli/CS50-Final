@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Cost Calculator
+{% endblock %}
+
+{% block main %}
+
+    <h2>Cost Calculator</h2>
+
+    <p>If you are appyling for your first passport, you must apply at an
+    acceptance facility unless it is a life-or-death emergency (please make an appointment at a passport agency).
+    The cost of your passport, paid to the U.S. Department of State, must be a check or money order.
+    There is a $35 processing fee per person at acceptance facilities. The $35 processing fee can be
+    paid in a number of ways. Check with your acceptance facility before arriving to see what forms of payment
+    they accept.</p>
+
+    <p style="border-bottom: solid black 1px; padding-bottom: 20px; color: red;">1-2 day return delivery is not available for passport cards alone.</p>
+
+    <form action="/calculator" method="post" style="padding-top: 20px" id="calc-form">
+
+        <label>Number of passport applicants:
+        <input type="number" name="total_applicants" min="0" value="0"></label><br>
+
+        <label>Number of adult (16+) passport books:
+        <input type="number" name="adult_books" min="0" value="0"></label><br>
+
+        <label>Number of adult (16+) passport cards:
+        <input type="number" name="adult_cards" min="0" value="0"></label><br>
+
+        <label>Number of minor (under 16) passport books:
+        <input type="number" name="minor_books" min="0" value="0"></label><br>
+
+        <label>Number of minor (under 16) passport cards:
+        <input type="number" name="minor_cards" min="0" value="0"></label><br>
+
+        <label>Number of expedited applications (+$60):
+        <input type="number" name="expedite" min="0" value="0"></label><br>
+
+        <label>Number of 1-2 day deliveries back to you (+$17.56):
+        <input type="number" name="overnight" min="0" value="0"></label><br>
+
+        <button type="submit" class="btn btn-dark" style="margin-top:
+        15px">Submit</button>
+
+    </form>
+
+{% endblock %}

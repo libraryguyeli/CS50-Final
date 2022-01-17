@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Estimated Time of Arrival
+{% endblock %}
+
+{% block main %}
+
+    <h2>Estimated Time of Arrival</h2>
+
+    <p>Routine processing (no additional fee) is currently taking 8 - 11 weeks to arrive
+    back to you.</p>
+    <p>Expedited processing (additional $60 fee) is currently taking 5 - 7 weeks to arrive
+    back to you.</p>
+
+    <p><b>Today's date:</b> {{ today }}</p>
+    <p><b>Routine processing:</b> {{ eight }} - {{ eleven }}</p>
+    <p><b>Expedited processing (+$60):</b> {{ five }} - {{ seven }}</p>
+
+    <p>Remember: Your personal documents will arrive back to you separately from your passport.
+    And your passport book and card will arrive separately if you order both.</p>
+
+{% endblock %}

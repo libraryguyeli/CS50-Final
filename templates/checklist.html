@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Interactive Checklist
+{% endblock %}
+
+{% block main %}
+
+    <script>
+        // Q2: Photos
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector("#photos_no").addEventListener("click", function() {
+                document.querySelector("#a2").innerHTML =
+                `You can have passport photos taken at many places like Walgreens, CVS,
+                Walmart, and UPS for varying prices. They must have been taken within 6 months
+                or they are considered too old. Here are more rules and regulations from the U.S. Department of State
+                for your passport photo: <a href="https://travel.state.gov/content/travel/en/passports/how-apply/photos.html"
+                target="_blank" rel="noopener noreferrer">U.S. Passport Photos</a>.`;
+            })
+        })
+        // Q3: Payment
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector("#payment_no").addEventListener("click", function() {
+                document.querySelector("#a3").innerHTML =
+                `If you are applying at an acceptance facility (like the post office), you are required to pay by check or money order.
+                Money orders can be obtained from a number of common places, like banks. If you are applying at a passport agency, you
+                can pay in a number of ways: <a href="https://travel.state.gov/content/travel/en/passports/how-apply/fees.html"
+                target="_blank" rel="noopener noreferrer">Passport Fees.`;
+            })
+        })
+        // Q4: Citizenship
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector("#citizen_no").addEventListener("click", function() {
+                document.querySelector("#a4").innerHTML =
+                `You are required to send one of these documents with your application. Otherwise, there are some secondary documents
+                that you can submit if you do not have one of the primary documents: <a href="https://travel.state.gov/content/travel/en/passports/how-apply/citizenship-evidence.html"
+                target="_blank" rel="noopener noreferrer">Citizenship Evidence</a>.`;
+            })
+        })
+        // Q5: Identification
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector("#id_no").addEventListener("click", function() {
+                document.querySelector("#a5").innerHTML =
+                `You are required to show your Driver's License or ID. Sometimes you are limited to applying in the state of your identification.
+                However, if you cannot provide either of these, you may bring multiple forms of other identification:
+                <a href="https://travel.state.gov/content/travel/en/passports/how-apply/identification.html"
+                target="_blank" rel="noopener noreferrer">Identification</a>.`;
+            })
+        })
+        // Q6: Minors
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector("#minor_yes").addEventListener("click", function() {
+                document.querySelector("#a6").innerHTML =
+                `All parents listed on the birth certificate or adoption papers are required to give consent in this
+                process. If both parents cannot be present, the absent parent can give consent by filling out and notarizing
+                the <a href="https://eforms.state.gov/Forms/ds3053.PDF" target="_blank" rel="noopener noreferrer">
+                Statement of Consent form</a>, and provide a photocopy of identification to be presented with the application
+                and documents.`;
+            })
+        })
+        // Q6: Black ink
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector("#wrong_ink").addEventListener("click", function() {
+                document.querySelector("#a7").innerHTML =
+                `All applications must be filled in with black ink or computer-typed and printed. Here is a link to the
+                <a href="https://pptform.state.gov/" target="_blank" rel="noopener noreferrer">
+                online form filler</a>.`;
+            })
+        })
+    </script>
+
+    <h2>Interactive Checklist</h2>
+    <form>
+        <fieldset>
+            <div class="q2">
+                <p id="under">Do you have recent passport photos?</p>
+                <input type="radio" value="Yes" id="photos_yes" name="q2">
+                <label for="photos_yes">Yes</label>
+                <input type="radio" value="No" id="photos_no" name="q2">
+                <label for="photos_no">No</label>
+                <p id="a2" class="response"></p>
+            </div>
+
+            <div class="q3">
+                <p id="under">Do you have a check or money order?</p>
+                <input type="radio" value="Yes" id="payment_yes" name="q3">
+                <label for="payment_yes">Yes</label>
+                <input type="radio" value="No" id="payment_no" name="q3">
+                <label for="payment_no">No</label>
+                <p id="a3" class="response"></p>
+            </div>
+
+            <div class="q4">
+                <p id="under">Do you have an original or certified U.S. birth certificate, Certificate of Naturalization, or previous U.S. passport?
+                Remember to also bring a photocopy.</p>
+                <input type="radio" value="Yes" id="citizen_yes" name="q4">
+                <label for="citizen_yes">Yes</label>
+                <input type="radio" value="No" id="citizen_no" name="q4">
+                <label for="citizen_no">No</label>
+                <p id="a4" class="response"></p>
+            </div>
+
+            <div class="q5">
+                <p id="under">Do you have a verified state-issued Driver's License or ID card?
+                Remember to also bring a photocopy.</p>
+                <input type="radio" value="Yes" id="id_yes" name="q5">
+                <label for="id_yes">Yes</label>
+                <input type="radio" value="No" id="id_no" name="q5">
+                <label for="id_no">No</label>
+                <p id="a5" class="response"></p>
+            </div>
+
+            <div class="q6">
+                <p id="under">Is this passport application for a minor under 16?</p>
+                <input type="radio" value="Yes" id="minor_yes" name="q6">
+                <label for="minor_yes">Yes</label>
+                <input type="radio" value="No" id="minor_no" name="q6">
+                <label for="minor_no">No</label>
+                <p id="a6" class="response"></p>
+            </div>
+
+            <div class="q7">
+                <p id="under">Is the application filled in with black ink or computer-typed and printed?</p>
+                <input type="radio" value="Yes" id="black_ink" name="q7">
+                <label for="black_ink">Yes</label>
+                <input type="radio" value="No" id="wrong_ink" name="q7">
+                <label for="wrong_ink">No</label>
+                <p id="a7" class="response"></p>
+            </div>
+
+        </fieldset>
+    </form>
+
+    <button type="submit" class="btn btn-dark" style="margin-top:15px" onClick="window.print()">Print Completed Checklist</button>
+
+
+{% endblock %}
